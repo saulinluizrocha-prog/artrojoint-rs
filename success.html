@@ -37,8 +37,7 @@
         /* ===== HEADER ===== */
         .header {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            padding: 14px 20px;
-            text-align: center;
+            padding: 12px 20px;
             position: relative;
             overflow: hidden;
         }
@@ -49,13 +48,18 @@
             background: radial-gradient(ellipse at top, rgba(51,161,153,.25) 0%, transparent 70%);
         }
         .header-inner {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
         }
+        .header-center { text-align: center; flex: 1; }
         .header-logo {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 900;
             color: #fff;
             letter-spacing: 2px;
@@ -63,11 +67,61 @@
         }
         .header-logo span { color: var(--teal); }
         .header-tagline {
-            font-size: 12px;
-            color: rgba(255,255,255,.6);
+            font-size: 10px;
+            color: rgba(255,255,255,.55);
             margin-top: 2px;
             letter-spacing: 1px;
             text-transform: uppercase;
+        }
+
+        /* Header side badges */
+        .header-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            min-width: 110px;
+            max-width: 130px;
+        }
+        .header-badge-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .header-badge-icon.eu {
+            background: #003399;
+            border: 2px solid #ffcc00;
+        }
+        .header-badge-icon.dist {
+            background: linear-gradient(135deg, var(--teal), var(--teal-d));
+            border: 2px solid rgba(255,255,255,.3);
+        }
+        .header-badge-text {
+            font-size: 9px;
+            color: rgba(255,255,255,.75);
+            text-align: center;
+            line-height: 1.35;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .header-badge-text em {
+            display: block;
+            font-style: normal;
+            color: rgba(255,255,255,.45);
+            font-weight: 400;
+            font-size: 8px;
+        }
+        @media (max-width: 480px) {
+            .header-badge { min-width: 72px; max-width: 80px; }
+            .header-badge-icon { width: 30px; height: 30px; font-size: 14px; }
+            .header-badge-text { font-size: 7.5px; }
+            .header-logo { font-size: 17px; }
         }
 
         /* ===== HERO SUCCESS ===== */
@@ -375,77 +429,42 @@
             margin-bottom: 18px;
         }
 
-        /* EU Cert row */
-        .eu-cert {
+        /* Security badges — CSS only, 3 badges */
+        .security-badges {
             display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 4px;
+        }
+        .sec-badge {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 14px;
+            gap: 5px;
             background: #f8fbff;
             border: 1px solid #dfe6e9;
             border-radius: 12px;
-            padding: 14px 18px;
-            margin-bottom: 16px;
+            padding: 12px 16px;
+            min-width: 110px;
+            flex: 1;
         }
-        .eu-cert img {
-            width: 54px;
-            height: 54px;
-            object-fit: contain;
-            flex-shrink: 0;
+        .sec-badge-icon {
+            font-size: 26px;
+            line-height: 1;
         }
-        .eu-cert-text {
-            font-size: 13px;
-            color: var(--text);
-            line-height: 1.5;
-            font-weight: 500;
-        }
-        .eu-cert-text span {
-            display: block;
+        .sec-badge-title {
             font-size: 11px;
-            color: var(--muted);
-            font-weight: 400;
-            margin-top: 2px;
-        }
-
-        /* Distributor row */
-        .distributor {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: linear-gradient(135deg, #f8f0ff, #edf2ff);
-            border: 1px solid #d9c9f0;
-            border-radius: 12px;
-            padding: 14px 18px;
-            margin-bottom: 16px;
-        }
-        .distributor-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--teal), var(--teal-d));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 22px;
-        }
-        .distributor-text {
-            font-size: 13px;
-            line-height: 1.5;
-        }
-        .distributor-text strong {
-            display: block;
-            font-size: 14px;
-            color: var(--text);
             font-weight: 700;
+            color: var(--text);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
         }
-        .distributor-text span { color: var(--muted); font-size: 12px; }
-
-        /* Security badges */
-        .security-badges img {
-            width: 100%;
-            max-width: 480px;
-            display: block;
-            margin: 0 auto;
+        .sec-badge-sub {
+            font-size: 10px;
+            color: var(--muted);
+            text-align: center;
         }
 
         /* ===== FOOTER ===== */
@@ -473,8 +492,29 @@
 <!-- HEADER -->
 <header class="header">
     <div class="header-inner">
-        <div class="header-logo">Artro<span>Joint</span></div>
-        <div class="header-tagline">Званични дистрибутер · Србија</div>
+        <!-- LEFT: EU Cert -->
+        <div class="header-badge">
+            <div class="header-badge-icon eu">🇪🇺</div>
+            <div class="header-badge-text">
+                EU Certified
+                <em>Clinically confirmed</em>
+            </div>
+        </div>
+
+        <!-- CENTER: Logo -->
+        <div class="header-center">
+            <div class="header-logo">Artro<span>Joint</span></div>
+            <div class="header-tagline">Официјални дистрибутер · Србија</div>
+        </div>
+
+        <!-- RIGHT: Official Distributor -->
+        <div class="header-badge">
+            <div class="header-badge-icon dist">🏅</div>
+            <div class="header-badge-text">
+                Official Distributor
+                <em>ArtroJoint Serbia</em>
+            </div>
+        </div>
     </div>
 </header>
 
@@ -585,27 +625,23 @@
     <div class="trust-card">
         <h3>Безбедност и квалитет</h3>
 
-        <!-- EU Certification -->
-        <div class="eu-cert">
-            <img src="img/eu_logo.png" alt="EU сертификат">
-            <div class="eu-cert-text">
-                <strong>Безбедност и ефикасност производа клинички су потврђени</strong>
-                <span>Product safety and effectiveness are clinically confirmed · EU Certified</span>
-            </div>
-        </div>
-
-        <!-- Official Distributor -->
-        <div class="distributor">
-            <div class="distributor-icon">🏅</div>
-            <div class="distributor-text">
-                <strong>Званични дистрибутер ArtroJoint производа</strong>
-                <span>Official distributor of ArtroJoint · Ауторизован добављач за Србију</span>
-            </div>
-        </div>
-
-        <!-- Security Badges -->
+        <!-- Security Badges (CSS, no money-back) -->
         <div class="security-badges">
-            <img src="img/security_badges.png" alt="Знакови безбедности">
+            <div class="sec-badge">
+                <div class="sec-badge-icon">🔒</div>
+                <div class="sec-badge-title">SSL Secure</div>
+                <div class="sec-badge-sub">Encrypted data</div>
+            </div>
+            <div class="sec-badge">
+                <div class="sec-badge-icon">✅</div>
+                <div class="sec-badge-title">Verified</div>
+                <div class="sec-badge-sub">Verified Purchase</div>
+            </div>
+            <div class="sec-badge">
+                <div class="sec-badge-icon">📦</div>
+                <div class="sec-badge-title">Safe Delivery</div>
+                <div class="sec-badge-sub">Fast & protected</div>
+            </div>
         </div>
     </div>
 

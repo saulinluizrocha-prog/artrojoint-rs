@@ -1,0 +1,451 @@
+/* ==============================================
+   MOBILE FIX — Correção de responsividade
+   Sobrescreve regras que causam overflow
+   no celular (telas < 480px)
+   ============================================== */
+
+/* 1. Remove o min-width fixo que impede responsividade */
+body {
+    min-width: 0 !important;
+}
+
+/* 2. Garante que nada vaze horizontalmente */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 3. Wrapper sem overflow oculto que corta conteúdo */
+.wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ==============================================
+   BREAKPOINT PEQUENO: telas até 480px
+   ============================================== */
+@media screen and (max-width: 480px) {
+
+    /* Inner padding menor para telas estreitas */
+    .inner {
+        padding: 0 16px !important;
+    }
+
+    /* ---- TOPO ---- */
+    .top-line {
+        height: 60px !important;
+    }
+
+    .top-line__call span {
+        font-size: 20px !important;
+    }
+
+    .top-line__call img {
+        width: 24px;
+    }
+
+    /* Menu mobile menor */
+    .nav {
+        width: 100% !important;
+        left: -105% !important;
+        top: 60px !important;
+    }
+
+    .mob-button.active + .nav {
+        left: 0 !important;
+    }
+
+    .nav a {
+        font-size: 18px !important;
+    }
+
+    /* ---- BLOCO PRINCIPAL (hero) ---- */
+    .main-block {
+        padding-top: 220px !important;
+        background-size: contain !important;
+    }
+
+    /* Form card ocupa toda a largura */
+    .main-block .form-block,
+    .popup__wrapper .form-block {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 20px 16px 30px !important;
+    }
+
+    .form-block__wrap {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Título do bloco */
+    .form-block__zakazhite {
+        font-size: 20px !important;
+    }
+
+    .form-block__one {
+        font-size: 18px !important;
+    }
+
+    /* ---- PREÇO ---- */
+    .main-block .price-block,
+    .popup__wrapper .price-block {
+        flex-direction: row !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px;
+    }
+
+    .price-block__price {
+        font-size: 32px !important;
+    }
+
+    .price-block__oldPrice {
+        font-size: 16px !important;
+    }
+
+    /* ---- TIMER (flip clock) no hero ---- */
+    .main-block .flip-clock-wrapper,
+    .popup__wrapper .flip-clock-wrapper {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
+    }
+
+    .main-block .flip-clock-wrapper ul,
+    .popup__wrapper .flip-clock-wrapper ul {
+        width: 38px !important;
+        height: 54px !important;
+    }
+
+    .main-block .flip-clock-wrapper ul li a div div.inn,
+    .main-block .flip-clock-wrapper ul,
+    .main-block .flip-clock-wrapper ul li a div,
+    .popup__wrapper .flip-clock-wrapper ul li a div div.inn,
+    .popup__wrapper .flip-clock-wrapper ul,
+    .popup__wrapper .flip-clock-wrapper ul li a div {
+        font-size: 50px !important;
+    }
+
+    .main-block .flip-clock-wrapper ul li a div,
+    .main-block .flip-clock-wrapper ul,
+    .main-block .flip-clock-wrapper ul li,
+    .popup__wrapper .flip-clock-wrapper ul li a div,
+    .popup__wrapper .flip-clock-wrapper ul,
+    .popup__wrapper .flip-clock-wrapper ul li {
+        line-height: 54px !important;
+    }
+
+    .main-block .flip-clock-divider:not(:first-child),
+    .popup__wrapper .flip-clock-divider:not(:first-child) {
+        width: 16px !important;
+    }
+
+    .main-block .flip-clock-divider .flip-clock-label,
+    .popup__wrapper .flip-clock-divider .flip-clock-label {
+        font-size: 11px !important;
+        top: 58px !important;
+    }
+
+    .main-block .flip-clock-divider.hours .flip-clock-label,
+    .popup__wrapper .flip-clock-divider.hours .flip-clock-label {
+        left: 18px !important;
+    }
+
+    .main-block .flip-clock-divider.minutes .flip-clock-label,
+    .popup__wrapper .flip-clock-divider.minutes .flip-clock-label {
+        left: 30px !important;
+    }
+
+    .main-block .flip-clock-divider.seconds .flip-clock-label,
+    .popup__wrapper .flip-clock-divider.seconds .flip-clock-label {
+        left: 26px !important;
+    }
+
+    .main-block .flip-clock-dot,
+    .popup__wrapper .flip-clock-dot {
+        left: 4px !important;
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    .main-block .flip-clock-dot.top,
+    .popup__wrapper .flip-clock-dot.top {
+        top: 16px !important;
+    }
+
+    .main-block .flip-clock-dot.bottom,
+    .popup__wrapper .flip-clock-dot.bottom {
+        bottom: 36px !important;
+    }
+
+    /* Timer label de texto */
+    .main-block .timer__title,
+    .popup__wrapper .timer__title {
+        font-size: 13px !important;
+    }
+
+    /* ---- INPUTS E BOTÃO ---- */
+    input, select {
+        height: 52px !important;
+        font-size: 16px !important;
+        text-indent: 12px !important;
+    }
+
+    input:not(:last-child),
+    select:not(:last-child) {
+        margin-bottom: 16px !important;
+    }
+
+    .form-btn {
+        font-size: 18px !important;
+        padding-top: 14px !important;
+        padding-bottom: 14px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* ---- SPLITAREA (barra verde de CTA) ---- */
+    .splitArea .flip-clock-wrapper {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
+    }
+
+    .splitArea .flip-clock-wrapper ul {
+        width: 38px !important;
+        height: 54px !important;
+    }
+
+    .splitArea .flip-clock-wrapper ul li a div div.inn,
+    .splitArea .flip-clock-wrapper ul,
+    .splitArea .flip-clock-wrapper ul li a div {
+        font-size: 50px !important;
+    }
+
+    .splitArea .flip-clock-wrapper ul li a div,
+    .splitArea .flip-clock-wrapper ul,
+    .splitArea .flip-clock-wrapper ul li {
+        line-height: 54px !important;
+    }
+
+    .splitArea .flip-clock-divider:not(:first-child) {
+        width: 16px !important;
+    }
+
+    .splitArea .flip-clock-divider .flip-clock-label {
+        font-size: 11px !important;
+        top: 58px !important;
+    }
+
+    .splitArea .flip-clock-divider.hours .flip-clock-label {
+        left: 18px !important;
+    }
+
+    .splitArea .flip-clock-divider.minutes .flip-clock-label {
+        left: 30px !important;
+    }
+
+    .splitArea .flip-clock-divider.seconds .flip-clock-label {
+        left: 26px !important;
+    }
+
+    .splitArea .flip-clock-dot {
+        left: 4px !important;
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    .splitArea .flip-clock-dot.top {
+        top: 16px !important;
+    }
+
+    .splitArea .flip-clock-dot.bottom {
+        bottom: 36px !important;
+    }
+
+    .splitArea .price-block__price {
+        font-size: 42px !important;
+    }
+
+    .splitArea .price-block__oldPrice {
+        font-size: 22px !important;
+    }
+
+    .splitArea .price-block__priceCurrency {
+        font-size: 24px !important;
+    }
+
+    .splitArea .price-block__oldPriceCurrency,
+    .splitArea .vmesto {
+        font-size: 16px !important;
+    }
+
+    .splitArea .btn {
+        font-size: 20px !important;
+        padding: 14px 20px !important;
+        border-radius: 35px !important;
+    }
+
+    .splitArea .timer__title {
+        font-size: 14px !important;
+    }
+
+    .splitArea__item {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    /* ---- TEXTOS GERAIS ---- */
+    .title {
+        font-size: 26px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .title span {
+        font-size: 22px !important;
+    }
+
+    /* Why */
+    .why {
+        font-size: 16px !important;
+        padding-bottom: 30px !important;
+    }
+
+    /* TopSix */
+    .topSix {
+        font-size: 16px !important;
+    }
+
+    .topSix__title {
+        margin-bottom: 600px !important;
+    }
+
+    .topSix__itemG {
+        width: 100% !important;
+    }
+
+    /* NumberOne */
+    .numberOne {
+        font-size: 16px !important;
+    }
+
+    .numberOne__item img {
+        max-width: 100%;
+        margin-left: 0 !important;
+    }
+
+    .numberOne__item-title {
+        font-size: 28px !important;
+    }
+
+    .numberOne__item-desc {
+        font-size: 18px !important;
+    }
+
+    /* NumberTwo */
+    .numberTwo {
+        font-size: 16px !important;
+        padding-bottom: 300px !important;
+    }
+
+    .numberTwo__item-cubes {
+        width: 100% !important;
+    }
+
+    .numberTwo__item-cube {
+        width: 100% !important;
+        margin: 8px 0 !important;
+    }
+
+    /* Six */
+    .six {
+        font-size: 16px !important;
+    }
+
+    .six__item:first-child {
+        font-size: 36px !important;
+    }
+
+    /* Sostav */
+    .sostav__slide-title {
+        font-size: 20px !important;
+    }
+
+    .sostav__slide-text {
+        font-size: 16px !important;
+    }
+
+    /* Sposob */
+    .sposob {
+        font-size: 16px !important;
+    }
+
+    .sposob__item-title {
+        font-size: 20px !important;
+    }
+
+    .sposob__desc {
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    /* Doctor */
+    .doctor__post-block {
+        width: 100% !important;
+        font-size: 16px !important;
+        padding-right: 0 !important;
+        padding-bottom: 40px !important;
+    }
+
+    .doctor__post-block::after {
+        display: none;
+    }
+
+    .doctor p {
+        font-size: 16px !important;
+    }
+
+    .doctor__title {
+        margin-bottom: 500px !important;
+    }
+
+    /* Step */
+    .step {
+        font-size: 16px !important;
+    }
+
+    .step__block-title {
+        font-size: 20px !important;
+    }
+
+    /* Reviews */
+    .reviews__slide {
+        width: 100% !important;
+    }
+
+    .reviews__slide-city,
+    .reviews__slide-name {
+        font-size: 20px !important;
+    }
+
+    .reviews__slide-bottom {
+        font-size: 16px !important;
+    }
+
+    /* Popup */
+    .popup__block {
+        width: 100% !important;
+        padding: 0 16px !important;
+    }
+}

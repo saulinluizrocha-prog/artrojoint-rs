@@ -1,0 +1,281 @@
+/* Popup styles start */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Geometria";
+    src: url('../fonts/Geometria-Heavy.otf') format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MyriadPro";
+    src: url('../fonts/MyriadPro-Regular.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MyriadPro";
+    src: url('../fonts/MyriadPro-Semibold.ttf') format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AgencyFB";
+    src: url('../fonts/AgencyFB.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AgencyFB";
+    src: url('../fonts/AgencyFB.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --popup-height: 718px;
+    --popup-width: 406px;
+    --yellow: #e7cf45;
+    --yellow-hover: #fde246;
+}
+
+.popup {
+    height: 100vh !important;
+    width: 100% !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    text-align: center !important;
+    position: fixed !important;
+    z-index: 9999 !important;
+    display: none;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+}
+
+.popup-wrapper {
+    height: var(--popup-height) !important;
+    width: var(--popup-width) !important;
+    background: #fff !important;
+    padding: 63px 59px 47px 59px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-shadow: 0px 6px 51px rgba(0, 0, 0, 0.35) !important;
+    transform: scale(0.9, 0.9) !important
+}
+
+.popup-close {
+    height: 31px !important;
+    width: 31px !important;
+    top: -15px !important;
+    right: -15px !important;
+    position: absolute !important;
+    border-radius: 100%;
+    background: var(--yellow) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: all 0.3s ease-out !important;
+}
+
+.popup-close-icon {
+    height: 17px !important;
+    width: 17px !important;
+    background: #000 !important;
+    clip-path: polygon(15% 0, 0 15%, 35% 50%, 0 85%, 15% 100%, 50% 65%, 85% 100%, 100% 85%, 65% 50%, 100% 15%, 85% 0, 50% 35%) !important;
+}
+
+.popup-close:hover {
+    cursor: pointer !important;
+    background: var(--yellow-hover) !important;
+    transition: all 0.3s ease-out !important;
+}
+
+.popup-title {
+    margin: 0 !important;
+    text-transform: uppercase !important;
+    font-family: "Geometria" !important;
+    font-weight: bold !important;
+    font-size: 28px !important;
+    color: #1a1a1a !important;
+}
+
+.popup-desc {
+    margin-top: 15px !important;
+    font-family: "MyriadPro" !important;
+    font-size: 18px !important;
+    color: #363636 !important;
+}
+
+.popup-form {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 15px !important;
+    padding: 0 10px !important;
+}
+
+.popup-input,
+.popup-select {
+    height: 35px !important;
+    width: 100% !important;
+    background: none !important;
+    border: 0 !important;
+    border-bottom: 1px solid #e7e7e7 !important;
+}
+
+.popup-input,
+.popup-select,
+.popup-input::placeholder {
+    color: #000 !important;
+    text-align: center;
+    font-family: "MyriadPro" !important;
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+    outline: none !important;
+    font-style: normal !important;
+    text-indent: 0px !important;
+    line-height: normal !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.popup-input::placeholder {
+    color: #adadad !important;
+}
+
+.popup-select {
+    text-align-last: center !important;
+    padding-left: 7px !important;
+    color: #000 !important;
+}
+
+.popup-btn {
+    width: 268px !important;
+    min-height: 44px !important;
+    margin-top: 28px !important;
+    border: 0 !important;
+    background: var(--yellow) !important;
+    font-family: "MyriadPro" !important;
+    text-transform: uppercase !important;
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+    color: #1a1a1a !important;
+    transition: all 0.3s ease-out !important;
+}
+
+.popup-btn:hover {
+    cursor: pointer !important;
+    background: var(--yellow-hover) !important;
+    transition: all 0.3s ease-out !important;
+}
+
+.popup-cost {
+    margin-top: 20px !important;
+    font-size: 27px !important;
+    line-height: 35px !important;
+    color: #1a1a1a !important;
+    font-family: "MyriadPro" !important;
+    font-weight: 500 !important;
+}
+
+.popup-timer-title {
+    margin-top: 20px !important;
+    font-size: 18px !important;
+    color: #363636 !important;
+    font-family: "MyriadPro" !important;
+    font-weight: normal !important;
+}
+
+.popup-timer-wrapper {
+    margin-top: 15px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-family: "AgencyFB" !important;
+    font-weight: bold !important;
+    font-size: 20px !important
+}
+
+.popup-timer-box {
+    width: 76px !important;
+    height: 64px !important;
+    margin: 0 5px !important;
+    border-radius: 1px !important;
+    box-shadow: 1px 1.732px 3px rgba(0, 0, 0, 0.15) !important;
+    background-image: linear-gradient(0deg, #dbdbdb 0%, #ededed 100%) !important;
+    border: 0.5px solid #d5d5d5 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.popup-timer-box-val {
+    font-size: 40px !important;
+    line-height: 40px !important;
+    letter-spacing: 3px !important;
+    color: #272727 !important;
+    text-shadow: 0.5px 0.866px 1px #ffffff !important;
+}
+
+.popup-timer-box-name {
+    text-transform: uppercase !important;
+    font-size: 14px !important;
+    line-height: 14px !important;
+    color: #a6a6a6 !important;
+    font-family: "Arial" !important;
+    text-shadow: 0.5px 0.866px 1px rgba(255, 255, 255, 0.5) !important;
+}
+
+.popup-notify {
+    margin-top: 25px !important;
+    text-transform: uppercase !important;
+    font-size: 18px !important;
+    color: #363636 !important;
+    font-family: "MyriadPro" !important;
+    font-weight: normal !important;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+/* Popup styles end */
